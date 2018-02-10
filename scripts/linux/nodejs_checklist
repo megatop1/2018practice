@@ -1,0 +1,26 @@
+Check if root
+Drop the following into the main app code
+process.setuid('desiredUser');	
+For the below- npm is a command for the node package manager
+Node security project - checks modules for known vulnerabilities
+npm -i nsp -g
+nsp audit-package
+Update packages
+npm install -g npm-check-updates
+ncu
+Headers-
+Use Helmet
+npm install --save helmet
+In an express app
+var helmet = require('helmet')
+app.use(helmet())
+Rate limiters
+npm install ratelimiter
+On login page:
+var email = req.body.email;
+var limit = new Limiter({ id: email, db: db });
+ 
+limit.get(function(err, limit) {
+ 
+});
+There's more that can be done to ensure session cookies are properly configured, sanitizing any user input forms, etc., but your ROI probably tapers off the deeper you go
