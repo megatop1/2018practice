@@ -1,0 +1,19 @@
+phpBB Hardening Checklist
+
+
+Change default admin(s) credentials
+Ensure install directory is completely removed
+Perhaps run a find command to make sure it hasn’t been moved to another dir
+find -name “*install*”
+Deny any php file in .htaccess in /files
+<Files *.php>
+Deny from all
+</Files>
+Move config.php out of document
+Create new config.php in root pointing to actual config
+<?php 
+Include (‘/var/www/html/…./[name of actual config file].php’)
+?>
+Go into ACP (Admin control panel) on web interface
+Check logs
+Check users (Admins, Moderators, etc -- anyone who can edit globally)
