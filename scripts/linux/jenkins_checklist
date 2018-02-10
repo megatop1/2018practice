@@ -1,0 +1,28 @@
+Jenkins notes:
+Default port: 8080 (http)
+
+Important Files (Ubuntu Default Install):
+/etc/default/jenkins - default settings and information for the install
+/var/lib/jenkins/
+	Credentials.xml - holds repository credentials used by jenkins
+	
+
+securing and hardening notes:
+Ensure global security is turned on 
+<hostname>:8080/configureSecurity
+Disabling Jenkins CLI
+Use script groovy script console on management page:
+‘jenkins.CLI.get().setEnabled(false)’
+Ensure proper Jenkins not running/executing as root
+Edit /etc/defaults/jenkins 
+JENKINS_USER and JENKINS_GROUP =! Root
+Remove ssh plugin if present.
+
+Recovery notes:
+Recovering locked out admin account
+Navigate to /etc/var/lib/jenkins/users/ -> all users contained here
+Generate sha256 hash of new password
+Identify admin account and open their ‘config.xml’ file
+Locate <passwordHash> tag and paste in new hash
+Login with new password and again reset password in UI
+See below (succesfully changed admin password to ‘test’)
