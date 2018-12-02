@@ -6,7 +6,7 @@
 </ul>
 <h4> Perequisites </h4>
 <ul>
-  <li> Running Domain Controller (DC_ with Active Directory (AD).</li>
+  <li> Running Domain Controller (DC) with Active Directory (AD).</li>
   <li> Windows Workstation (any version of normal WIndows Desktop) joined to your domain. </li>
   <li> At least one domain user account in AD. </li>
   </ul>
