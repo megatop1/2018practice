@@ -1,0 +1,7 @@
+get-gpo -all
+get-gpo -all | format-list -Property displayname //shows all current gpos in the domain, good for remote domains as well 
+Get-Command -Module grouppolicy -verb new //allows you to make new gpos 
+get-help new-gpo -Examples //gives examples about gpos 
+cls //clears screen
+New-Gpo -Name "InsertNameHere" //creates gpo with new name
+get-gpo -Name "InsertNameHere" | format-list * //gives information about gpo
