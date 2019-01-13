@@ -1,0 +1,8 @@
+import-module ActiveDirectory
+cd\
+cls
+New-ADUser NameOFNewUser -UserPrincipalName user@connor.com 
+get-aduser NameOfNewUser 
+Set-ADAccountPassword -Identity NameOfNewUser
+Enable ADAccount -Identity NameOfNewUser
+Get-ADUser NameOfNewUser -properties enabled 
